@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzería Valentina - La Mejor Pizza en Tu Ciudad</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Pizzería Valentina</h1>
+            <p>Ingredientes frescos, recetas tradicionales y un sabor inigualable.</p>
+            <a href="#contacto" class="cta-button">Ordena Ahora</a>
+        </div>
+    </header>
+
+    <!-- Sección de Características -->
+    <section class="features-section">
+        <h2>¿Por qué elegirnos?</h2>
+        <div class="feature">
+            <img src="icono-fresco.webp" alt="Ingredientes frescos">
+            <h3>Ingredientes Frescos</h3>
+            <p>Utilizamos productos locales para un sabor auténtico y fresco en cada bocado.</p>
+        </div>
+        <div class="feature">
+            <img src="icono-horno.webp" alt="Horno de leña">
+            <h3>Horno de Leña</h3>
+            <p>Nuestras pizzas se cocinan en horno de leña para un sabor inigualable.</p>
+        </div>
+        <div class="feature">
+            <img src="icono-ambiente.webp" alt="Ambiente acogedor">
+            <h3>Ambiente Familiar</h3>
+            <p>Disfruta de un ambiente cálido y acogedor para compartir con los tuyos.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Menú -->
+    <section class="menu-section">
+        <h2>Menú Destacado</h2>
+        <div class="carousel">
+            <div class="menu-item">
+                <img src="pizza-margarita.webp" alt="Pizza Margarita">
+                <h3>Pizza Margarita</h3>
+                <p>$8.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="pizza-pepperoni.webp" alt="Pizza Pepperoni">
+                <h3>Pizza Pepperoni</h3>
+                <p>$9.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="pizza-vegana.webp" alt="Pizza Vegana">
+                <h3>Pizza Vegana</h3>
+                <p>$10.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="4quesos.webp" alt="Pizza Cuatro Quesos">
+                <h3>Pizza Cuatro Quesos</h3>
+                <p>$11.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="hawaiiana.webp" alt="Pizza Hawaiana">
+                <h3>Pizza Hawaiana</h3>
+                <p>$10.50</p>
+            </div>
+            <div class="menu-item">
+                <img src="barbacoa.webp" alt="Pizza Barbacoa">
+                <h3>Pizza Barbacoa</h3>
+                <p>$12.99</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Sección de Testimonios -->
+    <section class="testimonials-section">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonial">
+            <img src="cliente1.webp" alt="Cliente satisfecho">
+            <p>"¡La mejor pizza que he probado! El ambiente es increíble."</p>
+            <h4>- Juan Pérez</h4>
+        </div>
+        <div class="testimonial">
+            <img src="cliente2.webp" alt="Cliente satisfecho">
+            <p>"El sabor es auténtico y los ingredientes son siempre frescos."</p>
+            <h4>- María López</h4>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contact-section">
+        <h2>Ordena Tu Pizza</h2>
+        <form id="orderForm" class="form-container">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            
+            <label for="direccion">Dirección (para envío a domicilio):</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Opcional">
+
+            <div id="pizzas">
+                <div class="pizza">
+                    <label>Elige tu Pizza:</label>
+                    <select name="tipo-pizza">
+                        <option value="margarita" data-price="8.99">Pizza Margarita - $8.99</option>
+                        <option value="pepperoni" data-price="9.99">Pizza Pepperoni - $9.99</option>
+                        <option value="vegana" data-price="10.99">Pizza Vegana - $10.99</option>
+                        <option value="cuatro-quesos" data-price="11.99">Pizza Cuatro Quesos - $11.99</option>
+                        <option value="hawaiana" data-price="10.50">Pizza Hawaiana - $10.50</option>
+                        <option value="barbacoa" data-price="12.99">Pizza Barbacoa - $12.99</option>
+                        <option value="pollo-bbq" data-price="13.99">Pizza Pollo BBQ - $13.99</option>
+                        <option value="carbonara" data-price="14.50">Pizza Carbonara - $14.50</option>
+                        <option value="mexicana" data-price="12.00">Pizza Mexicana - $12.00</option>
+                        <option value="marinera" data-price="15.99">Pizza Marinera - $15.99</option>
+                    </select>
+
+                    <label>Tamaño:</label>
+                    <select name="tamano">
+                        <option value="pequena" data-multiplier="1">Pequeña</option>
+                        <option value="mediana" data-multiplier="1.5">Mediana</option>
+                        <option value="grande" data-multiplier="2">Grande</option>
+                    </select>
+
+                    <label>Ingredientes Extra:</label>
+                    <div class="extras">
+                        <label><input type="checkbox" name="ingredientes-extra" value="queso" data-price="1"> Queso</label>
+                        <label><input type="checkbox" name="ingredientes-extra" value="pepperoni" data-price="1.5"> Pepperoni</label>
+                        <label><input type="checkbox" name="ingredientes-extra" value="champinones" data-price="1"> Champiñones</label>
+                        <label><input type="checkbox" name="ingredientes-extra" value="aceitunas" data-price="0.5"> Aceitunas</label>
+                        <label><input type="checkbox" name="ingredientes-extra" value="cebolla" data-price="0.5"> Cebolla</label>
+                        <label><input type="checkbox" name="ingredientes-extra" value="tocino" data-price="2"> Tocino</label>
+                        <label><input type="checkbox" name="ingredientes-extra" value="pimientos" data-price="1"> Pimientos</label>
+                        <label><input type="checkbox" name="ingredientes-extra" value="jalapenos" data-price="1"> Jalapeños</label>
+                        <label><input type="checkbox" name="ingredientes-extra" value="anchoas" data-price="2"> Anchoas</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="addPizza" class="add-button">Añadir otra Pizza</button>
+            <button type="button" id="deliveryButton" class="delivery-button">Envío a Domicilio</button>
+
+            <p>Total: $<span id="total">0.00</span></p>
+
+            <button type="submit" class="submit-button">Ordenar Ahora</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Pizzería Valentina - Todos los derechos reservados</p>
+        <p>Horario: Lunes a Domingo - 12:00 pm a 10:00 pm</p>
+        <p>Dirección: Calle Falsa 123, Tu Ciudad</p>
+    </footer>
+</body>
+</html>
